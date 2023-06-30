@@ -19,12 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Test", "4. Test", "{A57F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.test", "Domain.test\Domain.test.csproj", "{8FE11A09-C44F-4338-9E81-2F62742207AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{7DA4E278-8AE4-4241-AF1E-32E741E3557E}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Prueba.postman_collection.json = ..\..\Prueba.postman_collection.json
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.EventHandlers", "Service.EventHandlers\Service.EventHandlers.csproj", "{DB4EB6C5-6A9D-4DFC-A6C7-C083A7F29B6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.EventHandlers", "Service.EventHandlers\Service.EventHandlers.csproj", "{DB4EB6C5-6A9D-4DFC-A6C7-C083A7F29B6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
