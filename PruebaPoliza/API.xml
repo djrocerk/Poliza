@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="T:API.Controllers.AuthController">
+            <summary>
+            Auth controller
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AuthController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AuthController.LoginAsync(Service.EventHandlers.Commands.LoginRequestCommand)">
+             <summary>
+             Genera un token para los datos datos
+             </summary>
+             <remarks>
+             Ejemplo request:
+            
+                 POST /login
+                 {
+                    "username": "darl.8910",
+                    "password": "123.abc"
+                 }
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="M:API.Controllers.AuthController.RegisterAsync(Service.EventHandlers.Commands.UserCreateCommand)">
+             <summary>
+             Crea un usuario en la base de datos
+             </summary>
+             <remarks>
+             Ejemplo request:
+            
+                 POST /register
+                 {
+                     "userName": "darl.8910",
+                     "password": "123.abc",
+                     "fullName": "Roberto Cerquera",
+                     "email": "rcerque@gmail.com"
+                 }
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <member name="T:API.Controllers.PolizaController">
+            <summary>
+            Poliza controller
+            </summary>
+        </member>
+        <member name="M:API.Controllers.PolizaController.#ctor(Domain.Services.IPolizaService,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="polizaService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:API.Controllers.PolizaController.CrearPoliza(API.DTOs.CrearPolizaReq)">
+             <summary>
+             Crea una póliza
+             </summary>
+             <remarks>
+             Ejemplo request:
+            
+                 POST /
+                 {
+                     "numeroPoliza": "123",
+                     "nombreCliente": "Roberto Cerquera",
+                     "identificacionCliente": "1081564878",
+                     "fechaInicio": "2023-07-01",
+                     "fechaFin": "2024-07-01",
+                     "valorMaximoPoliza": 5000000,
+                     "nombrePlanPoliza": "Sura",
+                     "ciudadCliente": "NEIVA",
+                     "direccionResidencia": "Calle 25h 4w 04",
+                     "placa": "JGR011",
+                     "modelo": "2017",
+                     "tieneInspeccion": false
+                 }
+            
+             </remarks>
+             <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:API.Controllers.PolizaController.Search(System.String,System.String)" -->
+    </members>
+</doc>
