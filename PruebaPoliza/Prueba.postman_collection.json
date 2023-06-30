@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "7880062e-79b4-4c29-8c6e-ef17c218060a",
+		"name": "Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4559041"
+	},
+	"item": [
+		{
+			"name": "Crear Poliza",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroPoliza\": \"123\",\r\n    \"nombreCliente\": \"Diego Roldán\",\r\n    \"identificacionCliente\": \"1075245401\",\r\n    \"fechaInicio\": \"2023-07-01\",\r\n    \"fechaFin\": \"2024-07-01\",\r\n    \"valorMaximoPoliza\": 5000000,\r\n    \"nombrePlanPoliza\": \"Sura\",\r\n    \"ciudadCliente\": \"NEIVA\",\r\n    \"direccionResidencia\": \"Calle 25h 4w 04\",\r\n    \"placa\": \"JGR011\",\r\n    \"modelo\": \"2017\",\r\n    \"tieneInspeccion\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7218/api/poliza",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7218",
+					"path": [
+						"api",
+						"poliza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Poliza",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7218/api/poliza?poliza=123",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7218",
+					"path": [
+						"api",
+						"poliza"
+					],
+					"query": [
+						{
+							"key": "poliza",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"darl.8910\",\r\n    \"password\": \"123.abc\",\r\n    \"fullName\": \"Roberto Cerquera\",\r\n    \"email\": \"rcerque@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7218/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7218",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.collectionVariables.set('token', res.accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"darl.8910\",\r\n    \"password\": \"123.abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7218/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7218",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
